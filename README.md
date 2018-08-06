@@ -6,12 +6,18 @@ Requests are passed to the server using HTTP POST. Requests and responses are JS
 It is possible to request keys for one or many crypto periods, which means encryption key rotation is supported.
 
 ## Install
-    npm install
+    npm install @netinsight/clearkey-server
 
 ## Start server
 Start the ClearKey server on port 8000
 
-    node index.js
+```
+const clearkeyServer = require('@netinsight/clearkey-server')
+
+clearkeyServer.listen(8000, () => {
+    console.log('ClearKey Server listening on port 8000');
+})
+```
 
 # API
 There are two public APIs in the server: get\_content\_key() and get_license().
